@@ -1,0 +1,18 @@
+<h1>新規登録</h1>
+
+<%=bootstrap_form_for @user,url: '/user' do |u|%>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <%=u.text_field :name, label: "名前"%>
+            </div>
+            <div class='col-md-8 offset-2'>
+                <%=u.text_field :mail, label: "メールアドレス"%>
+            </div>
+            <div class='col-md-8 offset-2'>
+                <%=u.text_field :pass, label: "パスワード"%>
+            </div>
+             <%=u.submit '登録'%>
+        </div>
+    </div>
+<%end%>
