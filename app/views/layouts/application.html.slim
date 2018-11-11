@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title PostApp2
+        = csrf_meta_tags
+        = csp_meta_tag
+
+        = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+        = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    body
+        header
+            = link_to '新規登録', { controller: 'user', action: 'new' }
+            = link_to 'ログイン',{ controller: 'user',action: 'login'}
+        = yield

@@ -21,6 +21,7 @@ class UserController < ApplicationController
   def login
     @user=User.find_by(mail: params[:mail])
     if @user
+      session[:user_id]=@user.id
       redirect_to("/")
     else
       redirect_to('/login')
