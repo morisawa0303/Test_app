@@ -13,4 +13,17 @@ class UserController < ApplicationController
       redirect_to("/user/signup")
     end
   end
+
+  def login_form
+    @user
+  end
+
+  def login
+    @user=User.find_by(mail: params[:mail])
+    if @user
+      redirect_to("/")
+    else
+      redirect_to('/login')
+    end
+  end
 end
