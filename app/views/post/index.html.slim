@@ -1,2 +1,4 @@
-h1 Post#index
-p Find me in app/views/post/index.html.slim
+=link_to '書き込む',{controller:'post',action:'new'}
+
+- @post.each do |post|
+  = post.content

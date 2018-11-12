@@ -1,2 +1,3 @@
-h1 Post#new
-p Find me in app/views/post/new.html.slim
+=bootstrap_form_for @post,url:'/post' do |p|
+    = p.text_area :content,label: "入力してください"
+    = p.submit "投稿", class: "btn"
