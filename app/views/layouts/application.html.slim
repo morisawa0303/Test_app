@@ -10,6 +10,7 @@ html
 
     body
         header
+            =link_to '掲示板(仮)',{controller: 'top',action:'top'}
             - if session[:user_id]
                 = link_to '掲示板をみる',{controller: 'post',action: 'index'}
                 = link_to 'ログアウト',{controller: 'user',action: 'logout'}
@@ -17,3 +18,5 @@ html
                 = link_to '新規登録', {controller: 'user', action: 'new' }
                 = link_to 'ログイン',{controller: 'user',action: 'login'}
         = yield
+        - if @current_user
+            = link_to @current_user.name,{controller: 'user',action:'logout'}
