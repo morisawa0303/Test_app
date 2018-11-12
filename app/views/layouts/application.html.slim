@@ -10,7 +10,10 @@ html
 
     body
         header
-            = link_to '新規登録', {controller: 'user', action: 'new' }
-            = link_to 'ログイン',{controller: 'user',action: 'login'}
-            = link_to '掲示板をみる',{controller: 'post',action: 'index'}
+            - if session[:user_id]
+                = link_to '掲示板をみる',{controller: 'post',action: 'index'}
+                = link_to 'ログアウト',{controller: 'user',action: 'logout'}
+            -else
+                = link_to '新規登録', {controller: 'user', action: 'new' }
+                = link_to 'ログイン',{controller: 'user',action: 'login'}
         = yield
