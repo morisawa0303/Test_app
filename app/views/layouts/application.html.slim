@@ -10,15 +10,22 @@ html
 
     body
         header
-            =link_to '掲示板(仮)',{controller: 'top',action:'top'}
-            - if session[:user_id]
-                = link_to '掲示板をみる',{controller: 'post',action: 'index'}
-                = link_to 'ログアウト',{controller: 'user',action: 'logout'}
-            - else
-                = link_to '新規登録', {controller: 'user', action: 'new' }
-                = link_to 'ログイン',{controller: 'user',action: 'login'}
+            nav class="navbar navbar-expand-lg navbar-light bg-light"
+                a.navbar-brand href="/"  掲示板(仮)
+                button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.mr-auto
+                        - if session[:user_id]
+                            li.nav-item
+                                a.nav-link href="post/index"  掲示板をみる
+                            li.nav-item
+                                a.nav-link href="/user/#{@current_user.id}"  =@current_user.name 
+                            li.nav-item
+                                a.nav-link href="/logout"  ログアウト
+                        - else
+                            li.nav-item.active
+                                a.nav-link href="/user/new" 新規登録
+                            li.nav-item
+                                a.nav-link href="/login"  ログイン  
         = yield
-        - if @current_user
-            = link_to(@current_user.name,"/user/#{@current_user.id}")
-            
-            
