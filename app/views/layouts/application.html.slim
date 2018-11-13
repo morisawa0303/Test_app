@@ -19,10 +19,14 @@ html
                         - if session[:user_id]
                             li.nav-item
                                 a.nav-link href="/post"  掲示板をみる
-                            li.nav-item
-                                a.nav-link href="/user/#{@current_user.id}"  =@current_user.name 
-                            li.nav-item
-                                a.nav-link href="/logout"  ログアウト
+                            li.nav-item                           
+                                ul.nav.nav-pills
+                                    li.nav-item.dropdown
+                                        a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#!" role="button" = @current_user.name
+                                        .dropdown-menu
+                                            a.dropdown-item= link_to'マイページ',"/user/#{@current_user.id}",class: "dropdown-item"
+                                            a.dropdown-item href="/logout"  ログアウト
+
                         - else
                             li.nav-item.active
                                 a.nav-link href="/user/new" 新規登録

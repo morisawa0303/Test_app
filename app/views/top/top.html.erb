@@ -1,0 +1,11 @@
+<%if session[:user_id]%>
+    <ul class="nav nav-pills">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!" role="button" aria-haspopup="true" aria-expanded="false"><%=@current_user.name%></a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" ><%=link_to'マイページ',"/user/#{@current_user.id}",class: "dropdown-item"%></a>
+                <a class="dropdown-item" href="/logout">ログアウト</a>
+            </div>
+        </li>
+    </ul>
+<%end%>
