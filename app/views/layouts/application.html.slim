@@ -24,8 +24,8 @@ html
                                     li.nav-item.dropdown
                                         a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#!" role="button" = @current_user.name
                                         .dropdown-menu
-                                            a.dropdown-item= link_to'マイページ',"/user/#{@current_user.id}",class: "dropdown-item"
-                                            a.dropdown-item href="/logout"  ログアウト
+                                            = link_to'マイページ',"/user/#{@current_user.id}",class: "dropdown-item"
+                                            = link_to'ログアウト',"/logout",class: "dropdown-item"
 
                         - else
                             li.nav-item.active

@@ -64,5 +64,6 @@ gem "bootstrap_form", ">= 4.0.0.alpha1"
 
 gem 'slim-rails'
 gem 'html2slim'
+
 gem 'carrierwave'
 
