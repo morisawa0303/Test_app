@@ -1,3 +1,4 @@
 =bootstrap_form_for @post,url:'/post' do |p|
     = p.text_area :content,label: "入力してください"
+    = p.file_field :image_path, id: :image_path
     = p.submit "投稿", class: "btn"
