@@ -1,6 +1,14 @@
 =link_to '書き込む',{controller:'post',action:'new'}
 
-- @post.each do |post|
-  = link_to(post.content,"/post/#{post.id}")
+table.table
+  thead
+    tr
+      th 投稿
+      th 投稿日時
+  tbody
+   - @posts.each do |post|
+    tr
+        td =post.content
+        td =post.created_at
 
   
