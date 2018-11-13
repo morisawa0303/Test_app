@@ -18,7 +18,7 @@ html
                     ul.navbar-nav.mr-auto
                         - if session[:user_id]
                             li.nav-item
-                                a.nav-link href="post/index"  掲示板をみる
+                                a.nav-link href="/post"  掲示板をみる
                             li.nav-item
                                 a.nav-link href="/user/#{@current_user.id}"  =@current_user.name 
                             li.nav-item
