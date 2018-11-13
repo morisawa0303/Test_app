@@ -8,7 +8,8 @@ class PostController < ApplicationController
   end
 
   def create
-    @post=Post.new(content: get_post_params[:content])  
+    @post=Post.new(content: get_post_params[:content],
+                    user_id: @current_user.id)  
     if @post.save
       redirect_to('/post')
     end

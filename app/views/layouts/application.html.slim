@@ -14,9 +14,11 @@ html
             - if session[:user_id]
                 = link_to '掲示板をみる',{controller: 'post',action: 'index'}
                 = link_to 'ログアウト',{controller: 'user',action: 'logout'}
-            -else
+            - else
                 = link_to '新規登録', {controller: 'user', action: 'new' }
                 = link_to 'ログイン',{controller: 'user',action: 'login'}
         = yield
         - if @current_user
-            = link_to @current_user.name,{controller: 'user',action:'logout'}
+            = link_to(@current_user.name,"/user/#{@current_user.id}")
+            
+            

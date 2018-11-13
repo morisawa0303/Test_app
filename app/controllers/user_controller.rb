@@ -3,7 +3,6 @@ class UserController < ApplicationController
     @user=User.new
   end
 
-
   def create
     @user=User.new(params.require(:user).permit(:name,:mail,:pass))
     if @user.save
@@ -27,6 +26,13 @@ class UserController < ApplicationController
       redirect_to('/login')
     end
   end
+
+  def show
+
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
+
 
   def logout
     session[:user_id]=nil
