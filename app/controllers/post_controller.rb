@@ -7,6 +7,10 @@ class PostController < ApplicationController
     @post=Post.all
   end
 
+  def show
+    @post=Post.find(params[:id])
+  end
+
   def create
     @post=Post.new(content: get_post_params[:content],
                     user_id: @current_user.id)  
