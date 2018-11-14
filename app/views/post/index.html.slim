@@ -15,8 +15,8 @@ table.table
         -else
             td
         td =post.created_at.strftime("%Y-%m-%d %H:%M:%S")
-        - if post.user_id == @current_user.id
-            td =link_to 削除,{controller:'post',action:'destroy'}
+        td = link_to 'Delete',"/post/#{post.id}", :method => :delete, :confirm => 'Are you sure?'
+        
 
         
 
