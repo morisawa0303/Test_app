@@ -13,9 +13,11 @@ table.table
         - if post.image_path_url != nil
             td = image_tag("#{post.image_path_url}", :width => '105',:height => '75')
         -else
-            td 
-              img src="/no_image.png"
+            td
         td =post.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        - if post.user_id == @current_user.id
+            td = link_to '削除',"/post/#{post.id}", :method => :delete
+        
 
         
 

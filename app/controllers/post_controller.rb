@@ -19,4 +19,10 @@ class PostController < ApplicationController
   def get_post_params
     params.require(:post).permit(:content,:image_path)
   end
+
+  def destroy
+    @post=Post.find(params[:id])
+    @post.destroy
+    redirect_to('/post')
+  end
 end
