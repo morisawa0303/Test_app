@@ -4,7 +4,7 @@ class UserController < ApplicationController
   end
 
   def create
-    @user=User.new(params.require(:user).permit(:name,:mail,:pass))
+    @user=User.new(params.require(:user).permit(:name,:mail,:password))
     if @user.save
       flash[:notice]="新規登録しました"
       redirect_to("/")
@@ -19,7 +19,7 @@ class UserController < ApplicationController
 
   def login
     @user=User.find_by(mail: params[:mail])
-    if @user
+    if @user && @user.authenticate(params[:pass])
       session[:user_id]=@user.id
       redirect_to("/")
     else
