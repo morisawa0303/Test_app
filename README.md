@@ -1,24 +1,7 @@
-# README
+post_app(https://github.com/morisawa0303/post_app)のリメイク
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+主な改良点
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ヘッダーの追加
+入力フォームのレイアウトの改良
+サイトの導線の改良
