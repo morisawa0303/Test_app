@@ -1,0 +1,27 @@
+.container {
+    background-color:#fff;
+    width:	600px;
+    margin:	10px
+    auto;border:1px	solid#d1d1d1;
+}
+
+.row{
+    background-color:#08a3eb;
+    border:	1px	solid	#000000;
+}
+
+.btn{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #00BCD4;
+    background: rgb(77, 68, 68);
+    transition: .4s;
+}
+
+.btn:hover {
+    background: #57e943;
+    color: white;
+}

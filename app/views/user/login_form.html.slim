@@ -1,12 +1,11 @@
 = bootstrap_form_tag url: '/login' do |f|
     div class="container"
         div class="row"
-            div class="col-md-8 offset-2"
+            div class="offset-2 col-md-8"
                 = f.email_field :mail,placeholder: "メールアドレス"
             
-            div class="col-md-8 offset-2" 
+            div class="offset-2 col-md-8" 
                 = f.password_field :pass,placeholder: "パスワード"
-
-            div class="col-md-8 offset-2"
+            div class="offset-5"
                 = f.submit "ログイン", class: "btn"
     
