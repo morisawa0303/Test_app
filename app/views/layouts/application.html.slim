@@ -32,4 +32,6 @@ html
                                 a.nav-link href="/user/new" 新規登録
                             li.nav-item
                                 a.nav-link href="/login"  ログイン  
+        - if flash[:notice]
+            = flash[:notice]
         = yield

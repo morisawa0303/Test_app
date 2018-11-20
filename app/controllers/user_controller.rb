@@ -9,9 +9,9 @@ class UserController < ApplicationController
     @user=User.new(params.require(:user).permit(:name,:mail,:password))
     if @user.save
       flash[:notice]="新規登録しました"
-      redirect_to("/")
+      redirect_to("/login")
     else
-      redirect_to("/user/signup")
+      redirect_to("/user/new")
     end
   end
 
@@ -30,7 +30,10 @@ class UserController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if @user!=@current_user
+      redirect_to("/")
+    end
+    @user = User.find_by(id: params[:id])
     @posts = @user.posts.order(created_at: :desc)
   end
 
