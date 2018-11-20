@@ -67,3 +67,5 @@ gem 'html2slim'
 
 gem 'carrierwave'
 
+gem 'bcrypt'
+
