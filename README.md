@@ -1,4 +1,4 @@
-post_app(https://github.com/morisawa0303/post_app)のリメイク
+post_appのリメイク　(https://github.com/morisawa0303/post_app)
 
 主な改良点
 
