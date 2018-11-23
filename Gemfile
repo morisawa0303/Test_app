@@ -69,3 +69,5 @@ gem 'carrierwave'
 
 gem 'bcrypt'
 
+gem 'paranoia'
+
