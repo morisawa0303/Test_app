@@ -30,6 +30,14 @@ class UserController < ApplicationController
     end
   end
 
+    def index
+      if @current_user.administrator==true
+        @users=User.all
+      else
+        redirect_to('/')
+      end
+     end
+
   def show
     @user = User.find_by(id: params[:id])
     if @user!=@current_user
@@ -44,4 +52,6 @@ class UserController < ApplicationController
     flash[:notice]="ログアウトしました"
     redirect_to('/')
   end
+
+
 end
