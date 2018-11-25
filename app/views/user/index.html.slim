@@ -6,7 +6,7 @@ table.table
       th 削除
   tbody
    - @users.each do |user| 
-    tr
-        td =link_to user.name,"/user/#{user.id}"
-        td =user.created_at.strftime("%Y-%m-%d %H:%M:%S")
-        td = link_to '削除',"/user/#{user}.id}", :method => :delete
+        tr
+            td =link_to user.name,"/user/#{user.id}"
+            td =user.created_at.strftime("%Y-%m-%d %H:%M:%S")
+            td = link_to '削除',"/user/#{user.id}",:method => :delete
