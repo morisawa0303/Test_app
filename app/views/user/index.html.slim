@@ -1,2 +1,12 @@
-- @users.each do |u|
-    =u.name
+table.table
+  thead
+    tr
+      th ユーザーネーム
+      th 登録日時
+      th 削除
+  tbody
+   - @users.each do |user| 
+    tr
+        td =user.name
+        td =user.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        td = link_to '削除',"/user/#{user}.id}", :method => :delete

@@ -40,10 +40,11 @@ class UserController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    if @user!=@current_user
+    if @current_user.administrator==true || @user==@current_user
+      @posts = @user.posts.order(created_at: :desc)
+    else
       redirect_to("/")
-    end
-    @posts = @user.posts.order(created_at: :desc)
+    end 
   end
 
 
@@ -52,6 +53,4 @@ class UserController < ApplicationController
     flash[:notice]="ログアウトしました"
     redirect_to('/')
   end
-
-
 end

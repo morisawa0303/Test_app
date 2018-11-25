@@ -1,5 +1,4 @@
 class Administrator::UsersController < ApplicationController
- #これは不完全なコード 
  before_action :admin_user
  
   def index
