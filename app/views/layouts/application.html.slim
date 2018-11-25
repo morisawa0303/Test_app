@@ -26,6 +26,9 @@ html
                                         .dropdown-menu
                                             = link_to'マイページ',"/user/#{@current_user.id}",class: "dropdown-item"
                                             = link_to'ログアウト',"/logout",class: "dropdown-item"
+                            li.nav-item
+                                - if @current_user.administrator==true
+                                    =link_to 'ユーザー一覧','/user',class: "dropdown-item"
 
                         - else
                             li.nav-item.active
