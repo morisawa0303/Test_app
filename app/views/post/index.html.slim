@@ -9,7 +9,7 @@ table.table
   tbody
    - @posts.each do |post|
     tr
-        td =post.content
+        td =link_to post.content,"/post/#{post.id}"
         - if post.image_path_url != nil
             td = image_tag("#{post.image_path_url}", :width => '105',:height => '75')
         -else

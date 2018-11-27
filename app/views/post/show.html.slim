@@ -1,0 +1,4 @@
+div class="jumbotron"
+    p class="lead"= @post.content
+    -if @post.image_path
+        hr class="my-2" = image_tag("#{@post.image_path_url}",)
